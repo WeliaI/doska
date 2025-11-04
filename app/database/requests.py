@@ -39,17 +39,3 @@ async def delete_annons(id):
         await session.execute(delete(Announ).where(Announ.id == id))
         await session.commit()
         return announ
-
-# async def get_categories():
-#     async with async_session() as session:
-#         return await session.scalars(select(Category))
-
-
-# async def get_items_by_category(category_id):
-#     async with async_session() as session:
-#         return await session.scalars(select(Item).where(Item.category == category_id))
-
-
-# async def get_items(item_id):
-#     async with async_session() as session:
-#         return await session.scalar(select(Item).where(Item.id == item_id))

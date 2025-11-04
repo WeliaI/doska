@@ -91,37 +91,7 @@ async def get_all_ad(message: Message):
 @router.message(F.text == '📰 Мои объявления')
 async def get_user_ad(message: Message):
     await show_my_annons(message)
-
-# @router.message(F.photo)
-# async def handle_photo(message: Message, bot: Bot):
-#     photo = message.photo[-1]
     
-#     # Создаем папку для загрузок
-#     os.makedirs("downloads", exist_ok=True)
-    
-#     # Скачиваем фото
-#     file = await bot.get_file(photo.file_id)
-#     file_path = f"downloads/{photo.file_id}.jpg"
-#     await bot.download_file(file.file_path, file_path)
-    
-    
-#     # Сохраняем в базу данных
-#     # db.save_photo(
-#     #     user_id=user_id,
-#     #     file_id=photo.file_id,
-#     #     file_path=file_path,
-#     #     file_size=photo.file_size,
-#     #     width=photo.width,
-#     #     height=photo.height,
-#     #     caption=message.caption
-#     # )
-    
-#     await message.answer(
-#         f"✅ Фото сохранено!\n"
-#         f"📊 Размер: {photo.width}x{photo.height}\n"
-#         f"💾 Вес: {photo.file_size} байт\n"
-#         f"📝 Подпись: {message.caption or 'нет'}"
-#     )
 
 class Pagination:
     def __init__(self, data: List, page_size: int = 1):
